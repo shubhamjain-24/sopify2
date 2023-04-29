@@ -7,6 +7,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import InternNavigation from "./InternNavigation";
 // import { ChatState } from "../../context/ChatProvider";
+import img1 from '../Images/internDashmain.png'
+import './InternDashboard.css'
 
 const InternDashoard = () => {
   return (
@@ -40,6 +42,9 @@ const InternDashoard = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar> */}
+      <div className="internDashboard_mainContainer">
+        <img src={img1}/>
+      </div>
     </>
   );
 };

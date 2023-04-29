@@ -16,6 +16,13 @@ import vd1 from "../Images/vd1.mp4";
 import vd2 from "../Images/vd2.mp4";
 import Navigation from "../components/Navigation";
 import Navbar from "../components/Navbar/Navbar";
+import Payment2 from "../InfoPages/Payment1/payment";
+import qrcode from '../Images/qrcode.png'
+import locked from '../Images/locked.png'
+import unlocked from '../Images/unlocked.png'
+
+import '../InfoPages/Payment1/payment.css'
+import '../InfoPages/Payment2/paymentDone.css'
 import './Payment.css'
 // import { downloadProject } from "../../../backend/controllers/userController";
 // import { InternNavigation } from "./InternNavigation";
@@ -402,16 +409,26 @@ const Payment = () => {
       internItem.IsAmountpaid == false &&
       internItem.approval == "null" ? (
         <>
-          <Button
+          {/* <Button
           className="Payment_button"
             variant="light"
-            
           >
             <Link to="/ListenerChat">Chat</Link>
           </Button>
           <button onClick={sendMessage}>WhatsApp</button>
-          <img src={lc}></img>
-          <p
+          <img src={lc}></img> */}
+          <div className="payment1_grid-container">
+                <div className="payment1_left-box">
+                    <img src= {qrcode} alt="qrcode" width={"90%"}/>
+                    <h1 className="payment1_amount"> Rs.{internItem.price}</h1>
+                    <h1>Scan the QR code to pay the amount</h1>
+                </div>
+                <div className="payment1_right-box">
+                    <h2 className="payment1_right-heading">To avail your work ,pay now!</h2>
+                    <img src = {locked} alt="locked" width={"60%"} />
+                </div>
+            </div>
+          {/* <p
             style={{
               height: "4rem",
               width: "15rem",
@@ -427,10 +444,10 @@ const Payment = () => {
             }}
           >
             Rs. {internItem.price}
-          </p>
+          </p> */}
 
-          {/* <div>file img locked</div> */}
-          {/* <img src={ulc}></img> */}
+          {/* <div>file img locked</div>
+          <img src={ulc}></img> */}
         </>
       ) : (
         <></>
@@ -448,7 +465,7 @@ const Payment = () => {
           >
             <Link to="/ListenerChat">Chat</Link>
           </Button>
-          <img src={ulc}></img>
+          {/* <img src={ulc}></img> */}
           {/* Amount paid successfully */}
           {/* <div>{internItem.projectPath}</div> */}
           {/* <button onClick={DownloadProject}>j</button> */}
@@ -465,24 +482,43 @@ const Payment = () => {
               Download Work
             </a>
           </div> */}
-          <p
+          <div className="grid-container-pd">
+                <div className="left-box-pd">
+                    <img src= {qrcode} alt="qrcode" width={"90%"}/>
+                    <h1>Amount Paid</h1>
+                    <h1 className="amount-pd"> Rs. {internItem.price}</h1>
+                </div>
+                <div className="right-box-pd">
+                    <h2 className="right-heading-pd">Here is your work!!!</h2>
+                    <img src = {unlocked} alt="locked" width={"70%"} />
+                    <a
+              style={{
+                marginBottom: "0.5rem",
+                // background: "#a6b7ff",
+              }}
+              id="download-link"
+              href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
+              download
+            >
+                    <button className="download-btn">Download Work</button>
+            </a>
+                </div>
+            </div>
+          {/* <p
             style={{
               height: "4rem",
               width: "15rem",
               marginTop: "-19rem",
               position: "absolute",
-              //   backgroundColor: "#2d3867",
-              //   padding: "1rem 1rem",
               color: "black",
               marginLeft: "15rem",
-              //   borderRadius: "30px",
               fontSize: "30px",
               fontWeight: "bold",
             }}
           >
             Rs. {internItem.price}
-          </p>
-          <button
+          </p> */}
+          {/* <button
             style={{
               height: "4rem",
               width: "15rem",
@@ -499,7 +535,6 @@ const Payment = () => {
             <a
               style={{
                 marginBottom: "0.5rem",
-                // background: "#a6b7ff",
               }}
               id="download-link"
               href={`http://localhost:8080/api/user/download/project/${userInfo.email}`}
@@ -507,7 +542,7 @@ const Payment = () => {
             >
               Download Work
             </a>
-          </button>
+          </button> */}
         </>
       ) : (
         <></>

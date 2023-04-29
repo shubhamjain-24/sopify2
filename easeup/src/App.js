@@ -37,11 +37,14 @@ import CheckerDashboard from "./CheckerDashboard";
 import CheckerLogin from "./CheckerLogin";
 import CheckerSignup from "./CheckerSignup";
 import ApprovalStatus from "./ApprovalStatus";
-import CheckerMainboard from "./CheckerMainboard";
+// changed to infopage 5
+// import CheckerMainboard from "./CheckerMainboard";
+import CheckerMainboard from "../src/InfoPages/infopage5";
 import InternList from "./pages/InternList";
 import AllPaidClientList from "./pages/AllPaidClientList";
 import Payment from "./pages/Payment";
 import Infopage1 from "./InfoPages/infopage4";
+import Payment2 from "./InfoPages/Payment1/payment";
 
 // import Register from "./config/Register";
 function App() {
@@ -49,7 +52,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/new" element={<Infopage1 />} />
+        <Route path="/new" element={<Payment2 />} />
         {/* css done */}
         <Route path="/login" element={<Login />} />
         {/* css done */}

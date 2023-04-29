@@ -1,13 +1,27 @@
-.login__bg{
-    background-image: url(https://images.unsplash.com/photo-1604881991720-f91add269bed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
-    height: 92vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
+.intern_login__bg{
+    margin-top: 60px;
+    height: 62vh;
+    /* background-color: antiquewhite; */
+}
+.AdminLogin_mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.internLoginimage{
+    margin-top: 35px;
+}
+.adminLoginimage{
+    margin-top: 60px;
+}
+.adminLogin_Form{
+    margin-top: -200px;
+}
+.listnerLogin_Form{
+    margin-top: -160px;
 }
 .login__bg {
-    background-image: url(https://images.unsplash.com/photo-1604881991720-f91add269bed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+    background-image:'../Images/adminLogin' ;
     height: 92vh;
     background-position: center;
     background-size: cover;
@@ -20,10 +34,16 @@
     padding: 0px 5px 0px 5px;
     border: 1px solid black;
 }
-@media (max-width:770px) {
-    .login__bg {
-        height: 30vh;
-        height: 30vh;
-        margin-bottom: 30px;
+@media (max-width:536px) {
+    .adminLogin_Form,.listnerLogin_Form{
+        margin-top: -240px;
+    }
+}
+@media (max-width:400px) {
+    .adminLogin_Form.listnerLogin_Form{
+        margin-top: -380px;
+    }
+    .adminLoginimage,.listnerLoginimage{
+        margin-top: 20px;
     }
 }

@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
+import img1 from '../Images/internlogin2.jpg'
 
 import "../styles/login.css";
 
@@ -81,7 +82,9 @@ const Login = () => {
       <Navbar />
       <Container>
         <Row>
-          <Col md={5} className="login__bg" />
+          <Col md={5} className="intern_login__bg" >
+          <img className="internLoginimage" src={img1} />
+          </Col>
           <Col
             md={7}
             className="d-flex align-items-center justify-content-center flex-direction-column"

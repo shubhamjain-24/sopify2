@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import Navigation from "../components/Navigation";
 // import Navbar from "./components/Navbar/Navbar";
 import Navbar from "../components/Navbar/Navbar";
+import img1 from '../Images/listnerLogin.png'
 
 
 import "../styles/login.css";
@@ -84,14 +85,16 @@ const ListenerLogin = () => {
 
       <Container>
         <Row>
-          <Col md={5} className="login__bg" />
+          <Col md={5} className="login__bg" >
+          <img className="listnerLoginimage" src={img1} />
+          </Col>
           <Col
             md={7}
             className="d-flex align-items-center justify-content-center flex-direction-column"
           >
             {/* </Col> */}
             <Form style={{ width: "80%", maxWidth: 500 }}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3 listnerLogin_Form" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   required

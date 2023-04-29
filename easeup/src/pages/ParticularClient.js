@@ -410,14 +410,14 @@ const ParticularClient = () => {
       {/* <br /> */}
 
       {/* ye main background wala div h */}
-      <div className="PC_mainDiv" style={{ display: "flex"}}>
+      <div className="PC_mainDiv" >
         {/* ye nams or id jo likhi h wo h */}
         
         
        
           <div className="PC_subdiv1"> 
-            {" "}
-            <p style={{margin:"5px", fontSize:"19px",marginBottom:"20px"}}>
+            
+            <p style={{margin:"5px", fontSize:"22px",marginBottom:"20px",marginTop:"20px"}}>
             Welcome,
             </p>
             {internItem.name}

@@ -9,10 +9,11 @@ import "../styles/signup.css";
 import axios from "axios";
 // import { useHistory } from "react-router-dom";
 import Toast from "react-bootstrap/Toast";
+import img1 from '../Images/adminsignup.jpg'
 import { useToast } from "@chakra-ui/react";
 // import Navigation from "../components/Navigation";
 
-// import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 // import {useSignupUserMutation} from '../services/appApi'
 
@@ -115,10 +116,12 @@ const AdminSignup = () => {
   return (
     <>
       {" "}
-      {/* <Navbar /> */}
-      <Container>
+      <Navbar />
+      <Container style={{marginTop:"30px"}}>
         <Row>
-          <Col md={5} className="signup__bg" />
+          <Col md={5} className="signup__bg" >
+          <img className="adminLoginimage" src={img1} />
+          </Col>
           <Col
             md={7}
             className="d-flex align-items-center justify-content-center flex-direction-column"

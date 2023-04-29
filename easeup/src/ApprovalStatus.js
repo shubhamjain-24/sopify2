@@ -10,11 +10,13 @@ import InternNavigation from "./pages/InternNavigation";
 import { useToast } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import './ApprovalStyles.css'
-import {if1} from '../src/InfoPages/Infopage1'
-import {if2} from '../src/InfoPages/Infopage2'
-import {if3} from '../src/InfoPages/infopage3'
-import {if4} from '../src/InfoPages/infopage4'
-import {if5} from '../src/InfoPages/infopage5'
+import Infopage1 from '../src/InfoPages/Infopage1'
+import Infopage2 from '../src/InfoPages/Infopage2'
+import Infopage3 from '../src/InfoPages/infopage3'
+import Infopage4 from '../src/InfoPages/infopage4'
+import Infopage5 from '../src/InfoPages/infopage5'
+import img1 from './Images/if22.png'
+import '../src/InfoPages/Infopage2.css'
 
 const ApprovalStatus = () => {
   const [emails, setEmail] = useState("");
@@ -109,7 +111,8 @@ const ApprovalStatus = () => {
         {internItem.checkerSent == true ? (
         <>
           Your task is underview
-          <img src={mf}></img>
+          {/* <img src={mf}></img> */}
+          <Infopage1/>
         </>
       ) : (
         <>Click here to know the status : </>
@@ -134,8 +137,8 @@ const ApprovalStatus = () => {
       {internItem.approval == "null" && internItem.checkerSent == false ? (
         <>
           {/* Submit a new task */}
-          <img src={rw}></img>
-          {/* <if4/> */}
+          {/* <img src={rw}></img> */}
+          <Infopage4/>
         </>
       ) : (
         <> </>
@@ -162,25 +165,76 @@ const ApprovalStatus = () => {
           >
             <Link to="/clientdetails">Explore Clients</Link>
           </button>
-          <img src={at}></img>
+          {/* <img src={at}></img> */}
+          <Infopage3/>
         </>
       ) : (
         <></>
       )}
       {internItem.approval == "false" && internItem.checkerSent == true ? (
         <>
-          Your task was not approved
-          {internItem.Corrections}
-          <img src={mtaf}></img>
+          {/* Your task was not approved
+          {internItem.Corrections} */}
+          {/* <img src={mtaf}></img> */}
+          {/* <Infopage2/> */}
+          <div className="if2_mainContainer">
+        <div className="if2_subContainer">
+          <div className="if2_gridContainer">
+            <div className="if2_gridsec1">
+              <div className="if2_textSection">
+                <div className="if2_text1">
+                  <span className="if2_sp1">oops ! </span>
+                  Your work has <span className="if2_sp2">not </span>been
+                  accepted.
+                </div>
+              </div>
+                <div className="if2_reviewSection">
+                <div className="if2_text2">Description</div>
+                <div className="if2_text3">
+                {internItem.Corrections} 
+                </div>
+                </div>
+            </div>
+            <div className="if2_gridsec2">
+              <img className="if3-img" src={img1} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
         </>
       ) : (
         <></>
       )}
       {internItem.approval == "false" ? (
         <>
-          Your task is not approved
-          {internItem.Corrections}
-          <img src={mtaf}></img>
+          {/* Your task is not approved
+          {internItem.Corrections} */}
+          {/* <img src={mtaf}></img> */}
+          {/* <Infopage2/> */}
+          <div className="if2_mainContainer">
+        <div className="if2_subContainer">
+          <div className="if2_gridContainer">
+            <div className="if2_gridsec1">
+              <div className="if2_textSection">
+                <div className="if2_text1">
+                  <span className="if2_sp1">oops ! </span>
+                  Your work has <span className="if2_sp2">not </span>been
+                  accepted.
+                </div>
+              </div>
+                <div className="if2_reviewSection">
+                <div className="if2_text2">Description</div>
+                <div className="if2_text3">
+                {internItem.Corrections} 
+                </div>
+                </div>
+            </div>
+            <div className="if2_gridsec2">
+              <img className="if3-img" src={img1} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
         </>
       ) : (
         <></>

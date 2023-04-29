@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
+import img1 from './Images/adminLogin.png'
 
 // import Navbar from "../components/Navbar/Navbar";
 import Navbar from "./components/Navbar/Navbar";
@@ -81,16 +82,19 @@ const AdminLogin = () => {
   return (
     <>
       <Navbar />
-      <Container>
+      <Container className="AdminLogin_mainContainer">
         <Row>
-          <Col md={5} className="login__bg" />
+          <Col  className="login__bg">
+          <img className="adminLoginimage" src={img1} />
+          </Col>
           <Col
             md={7}
-            className="d-flex align-items-center justify-content-center flex-direction-column"
+            className="d-flex align-items-center justify-content-center flex-direction-column
+            adminLogin_Form"
           >
             {/* </Col> */}
             <Form style={{ width: "80%", maxWidth: 500 }}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3 adminLogin_Form" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   required
