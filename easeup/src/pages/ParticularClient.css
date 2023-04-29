@@ -1,0 +1,35 @@
+.PC_mainDiv{
+    display: flex;
+}
+.PC_subdiv1{
+    flex: 1;
+    background-color: "#2d3867";
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    /* border-right: 1px solid black; */
+}
+.PC_subdiv2{
+    flex: 3;
+    display: flex;
+    width: 86%;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-left: 12%;
+    /* background-color: aqua; */
+}
+
+@media (max-width:650px){
+    .PC_mainDiv{
+        display: block;
+    }
+    .PC_subdiv1{
+        display: block;
+    }
+    .PC_subdiv2{
+        display: block;
+    }
+}
