@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { ChatState } from "../context/ChatProvider";
 import { Box } from "@chakra-ui/react";
+import Navbar from "../components/Navbar/Navbar";
 import '../styles/Chat.css'
 // import SideDrawer from "../components/miscellanous/SideDrawer";
 import MyChats from "../components/miscellanous/MyChats";
@@ -13,6 +14,8 @@ const ListenerChat = () => {
   const { user } = ChatState();
 
   return (
+    <>
+    <Navbar/>
     <div style={{ width: "100%" }}>
       {user && <ListenSideDraw />}
       <div className="chat_mainDiv">
@@ -30,6 +33,7 @@ const ListenerChat = () => {
       </Box>
     </div>
     </div>
+    </>
   );
 };
 

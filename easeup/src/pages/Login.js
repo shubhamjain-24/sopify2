@@ -87,10 +87,10 @@ const Login = () => {
           </Col>
           <Col
             md={7}
-            className="d-flex align-items-center justify-content-center flex-direction-column"
+            className="d-flex align-items-center justify-content-center flex-direction-column "
           >
             {/* </Col> */}
-            <Form style={{ width: "80%", maxWidth: 500 }}>
+            <Form className="internLoginForm" style={{ width: "80%", maxWidth: 500 }}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control

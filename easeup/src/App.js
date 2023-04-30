@@ -45,6 +45,7 @@ import AllPaidClientList from "./pages/AllPaidClientList";
 import Payment from "./pages/Payment";
 import Infopage1 from "./InfoPages/infopage4";
 import Payment2 from "./InfoPages/Payment1/payment";
+// import Payment3 from "./InfoPages/Payment3/Payment3";
 
 // import Register from "./config/Register";
 function App() {
@@ -104,6 +105,7 @@ function App() {
         <Route path="/SignInChecker" element={<CheckerLogin />} />
         {/* done */}
         <Route path="/approvalstatus" element={<ApprovalStatus />} />
+
         <Route path="/Checkertable" element={<CheckerDashboard />} />
         <Route path="/CheckerDashboard" element={<CheckerMainboard />} />
         <Route path="/internList" element={<InternList />} />

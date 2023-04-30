@@ -12,10 +12,15 @@
     padding: 0px 5px 0px 5px;
     border: 1px solid black;
 }
+.internsignupimage{
+    margin-top: 40px;
+    /* margin-left: 80px; */
+}
 @media (max-width:770px) {
     .signup__bg{
-        /* width: 40vh;
-        height: 40vh;
-        margin-bottom: 20px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
     }
 }

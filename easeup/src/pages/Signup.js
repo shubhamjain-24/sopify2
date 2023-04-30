@@ -13,6 +13,7 @@ import { useToast } from "@chakra-ui/react";
 // import Navigation from "../components/Navigation";
 
 import Navbar from "../components/Navbar/Navbar";
+import img1 from '../Images/internSignup2.png'
 
 // import {useSignupUserMutation} from '../services/appApi'
 
@@ -180,7 +181,9 @@ const Signup = () => {
       <Navbar />
       <Container>
         <Row>
-          <Col md={5} className="signup__bg" />
+          <Col md={5} className="signup__bg" >
+          <img className="internsignupimage" src={img1} />
+          </Col>
           <Col
             md={7}
             className="d-flex align-items-center justify-content-center flex-direction-column"

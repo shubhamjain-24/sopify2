@@ -9,14 +9,16 @@ import rw from "./approvalImages/rw.png";
 import InternNavigation from "./pages/InternNavigation";
 import { useToast } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import './ApprovalStyles.css'
-import Infopage1 from '../src/InfoPages/Infopage1'
-import Infopage2 from '../src/InfoPages/Infopage2'
-import Infopage3 from '../src/InfoPages/infopage3'
-import Infopage4 from '../src/InfoPages/infopage4'
-import Infopage5 from '../src/InfoPages/infopage5'
-import img1 from './Images/if22.png'
-import '../src/InfoPages/Infopage2.css'
+import "./ApprovalStyles.css";
+import Infopage1 from "../src/InfoPages/Infopage1";
+import Infopage2 from "../src/InfoPages/Infopage2";
+import Infopage3 from "../src/InfoPages/infopage3";
+import Infopage4 from "../src/InfoPages/infopage4";
+import Infopage5 from "../src/InfoPages/infopage5";
+import img1 from "./Images/if22.png";
+import img2 from "./Images/if3.png";
+import "../src/InfoPages/Infopage2.css";
+import "../src/InfoPages/infopage3.css";
 
 const ApprovalStatus = () => {
   const [emails, setEmail] = useState("");
@@ -109,17 +111,23 @@ const ApprovalStatus = () => {
       </div> */}
       <div className="ApprovStatus_head">
         {internItem.checkerSent == true ? (
-        <>
-          Your task is underview
-          {/* <img src={mf}></img> */}
-          <Infopage1/>
-        </>
-      ) : (
-        <>Click here to know the status : </>
-      )}
-      <div>
-        <Button className="Approvstatus_button" onClick={FetchInternClientarray}>Fetch</Button>
+          <>
+            {/* Your task is underview. */}
+            {/* <img src={mf}></img> */}
+            <Infopage1 />
+          </>
+        ) : (
+          <> </>
+        )}
       </div>
+      <div className="ApprovStatus_head_sub">
+        Click here to know the status:
+        <Button
+          className="Approvstatus_button"
+          onClick={FetchInternClientarray}
+        >
+          Fetch
+        </Button>
       </div>
 
       {/* {internItem.Marked == false ? (
@@ -130,43 +138,73 @@ const ApprovalStatus = () => {
 
       {/* {review ? <>Your work is under view</> : <>Submit a new task</>} */}
 
-     
       {/* {internItem.Marked == true ? <>Your Work is under View</> : <></>} */}
 
-<div className="aproovStatusPic1">
-      {internItem.approval == "null" && internItem.checkerSent == false ? (
-        <>
-          {/* Submit a new task */}
-          {/* <img src={rw}></img> */}
-          <Infopage4/>
-        </>
-      ) : (
-        <> </>
-      )}
+      <div className="aproovStatusPic1">
+        {internItem.approval == "null" && internItem.checkerSent == false ? (
+          <>
+            {/* Submit a new task */}
+            {/* <img src={rw}></img> */}
+            <Infopage4 />
+          </>
+        ) : (
+          <> </>
+        )}
       </div>
 
       {internItem.approval == "true" ? (
         <>
-          Your task is approved <Button onClick={MarkasCompleted}>Mark </Button>
-          <button
-            style={{
-              height: "3rem",
-              width: "10rem",
-              marginTop: "9rem",
-              position: "absolute",
-              backgroundColor: "#2d3867",
-              padding: "0.5rem 1rem",
-              color: "white",
-              marginLeft: "20rem",
-              borderRadius: "30px",
-              fontSize: "15px",
-              zIndex: 100,
-            }}
-          >
-            <Link to="/clientdetails">Explore Clients</Link>
-          </button>
+          {/* Your task is approved <Button onClick={MarkasCompleted}>Mark </Button> */}
+          <div className="if3_clientButton_Div">
+            Now you can explore more Clients &nbsp;&nbsp;&nbsp;
+            <Link to="/clientdetails">
+              <button
+                style={{
+                  height: "3rem",
+                  width: "10rem",
+                  // display:"flex",
+                  // marginTop: "9rem",
+                  // position: "absolute",
+                  backgroundColor: "#2d3867",
+                  padding: "0.5rem 1rem",
+                  color: "white",
+                  // marginLeft: "20rem",
+                  borderRadius: "30px",
+                  fontSize: "15px",
+                  zIndex: 100,
+                }}
+              >
+                Explore Clients
+              </button>
+            </Link>
+          </div>
           {/* <img src={at}></img> */}
-          <Infopage3/>
+          {/* <Infopage3/> */}
+          <div className="if3_mainContainer">
+            <div className="if3_subContainer">
+              <div className="if3_gridContainer">
+                <div className="if3_gridsec1">
+                  <img className="if3-img" src={img2} alt="" />
+                </div>
+                <div className="if3_gridsec2">
+                  <div className="if3_textSection">
+                    <div className="if3_text1">Congrats,</div>
+                    <div className="if3_text2">
+                      Your task
+                      <br />
+                      has been
+                    </div>
+                    <div className="if3_text3">approved.</div>
+                    <div className="if_button" onClick={MarkasCompleted}>
+                      Mark as
+                      <br />
+                      Completed
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       ) : (
         <></>
@@ -178,29 +216,27 @@ const ApprovalStatus = () => {
           {/* <img src={mtaf}></img> */}
           {/* <Infopage2/> */}
           <div className="if2_mainContainer">
-        <div className="if2_subContainer">
-          <div className="if2_gridContainer">
-            <div className="if2_gridsec1">
-              <div className="if2_textSection">
-                <div className="if2_text1">
-                  <span className="if2_sp1">oops ! </span>
-                  Your work has <span className="if2_sp2">not </span>been
-                  accepted.
+            <div className="if2_subContainer">
+              <div className="if2_gridContainer">
+                <div className="if2_gridsec1">
+                  <div className="if2_textSection">
+                    <div className="if2_text1">
+                      <span className="if2_sp1">oops ! </span>
+                      Your work has <span className="if2_sp2">not </span>been
+                      accepted.
+                    </div>
+                  </div>
+                  <div className="if2_reviewSection">
+                    <div className="if2_text2">Description</div>
+                    <div className="if2_text3">{internItem.Corrections}</div>
+                  </div>
+                </div>
+                <div className="if2_gridsec2">
+                  <img className="if3-img" src={img1} alt="" />
                 </div>
               </div>
-                <div className="if2_reviewSection">
-                <div className="if2_text2">Description</div>
-                <div className="if2_text3">
-                {internItem.Corrections} 
-                </div>
-                </div>
-            </div>
-            <div className="if2_gridsec2">
-              <img className="if3-img" src={img1} alt="" />
             </div>
           </div>
-        </div>
-      </div>
         </>
       ) : (
         <></>
@@ -212,29 +248,27 @@ const ApprovalStatus = () => {
           {/* <img src={mtaf}></img> */}
           {/* <Infopage2/> */}
           <div className="if2_mainContainer">
-        <div className="if2_subContainer">
-          <div className="if2_gridContainer">
-            <div className="if2_gridsec1">
-              <div className="if2_textSection">
-                <div className="if2_text1">
-                  <span className="if2_sp1">oops ! </span>
-                  Your work has <span className="if2_sp2">not </span>been
-                  accepted.
+            <div className="if2_subContainer">
+              <div className="if2_gridContainer">
+                <div className="if2_gridsec1">
+                  <div className="if2_textSection">
+                    <div className="if2_text1">
+                      <span className="if2_sp1">oops ! </span>
+                      Your work has <span className="if2_sp2">not </span>been
+                      accepted.
+                    </div>
+                  </div>
+                  <div className="if2_reviewSection">
+                    <div className="if2_text2">Description</div>
+                    <div className="if2_text3">{internItem.Corrections}</div>
+                  </div>
+                </div>
+                <div className="if2_gridsec2">
+                  <img className="if3-img" src={img1} alt="" />
                 </div>
               </div>
-                <div className="if2_reviewSection">
-                <div className="if2_text2">Description</div>
-                <div className="if2_text3">
-                {internItem.Corrections} 
-                </div>
-                </div>
-            </div>
-            <div className="if2_gridsec2">
-              <img className="if3-img" src={img1} alt="" />
             </div>
           </div>
-        </div>
-      </div>
         </>
       ) : (
         <></>

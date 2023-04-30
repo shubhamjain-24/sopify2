@@ -485,7 +485,7 @@ const Payment = () => {
           <div className="grid-container-pd">
                 <div className="left-box-pd">
                     <img src= {qrcode} alt="qrcode" width={"90%"}/>
-                    <h1>Amount Paid</h1>
+                    <h1 className='PD_text1'>Amount Paid</h1>
                     <h1 className="amount-pd"> Rs. {internItem.price}</h1>
                 </div>
                 <div className="right-box-pd">

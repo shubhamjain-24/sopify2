@@ -1,6 +1,6 @@
-import "../Pages/paymentDone.css"
-import qrcode from "../Pages/qrcode.png"
-import unlocked from "../Pages/unlocked.png"
+import './paymentDone.css'
+import qrcode from "../../Images/qrcode.png"
+import unlocked from "../../Images/unlocked.png"
 
 function PaymentDone() {
     return(
@@ -8,7 +8,7 @@ function PaymentDone() {
             <div className="grid-container-pd">
                 <div className="left-box-pd">
                     <img src= {qrcode} alt="qrcode" width={"90%"}/>
-                    <h1>Amount Paid</h1>
+                    <h1 className='PD_text1'>Amount Paid</h1>
                     <h1 className="amount-pd"> Rs. 5000</h1>
                 </div>
                 <div className="right-box-pd">

@@ -43,7 +43,18 @@ const InternDashoard = () => {
         </Container>
       </Navbar> */}
       <div className="internDashboard_mainContainer">
-        <img src={img1}/>
+      <div className="internDashboard_subContainer1">
+      <div className="internDashboard_subContainer1_inner">
+        <h1 className="ID_head">Welcome,</h1>
+        <h3 className="ID_head2">Intern Name</h3>
+        <p className="Id_head3">Welcome to the team! We're excited to have you here as an intern. We hope this experience will be valuable and rewarding for you, and we look forward to working together.</p>
+      </div>
+      </div>
+      <div className="internDashboard_subContainer2">
+        <img className="internDashboard_Image" src={img1}/>
+        
+      </div>
+
       </div>
     </>
   );
