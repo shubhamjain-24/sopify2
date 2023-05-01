@@ -128,32 +128,18 @@ const InternNavigation = () => {
             <Offcanvas.Body>
               <ul className="R_Navigation">
                 <li className="R_navs-list">
-                  <a href="/">Home Page</a>
+                  <a href="/internDashboard">Intern Dashoard</a>
                 </li>
                 <li className="R_navs-list">
-                  <a href="/blog">Blogs</a>
+                  <a href="/chat">My Chats</a>
                 </li>
                 <li className="R_navs-list">
-                  <a href="/services">Services</a>
+                  <a href="/particularClient">Particular Client Info</a>
                 </li>
                 <li className="R_navs-list">
-                  <a href="/sop">SOP</a>
+                  <a href="/approvalstatus">Apporaval Status</a>
                 </li>
-                <li className="R_navs-list">
-                  <a href="/lor">LOR</a>
-                </li>
-                <li className="R_navs-list">
-                  <a href="/assignment">Assignment</a>
-                </li>
-                <li className="R_navs-list">
-                  <a href="/aboutus">Contact Us</a>
-                </li>
-                <li className="R_navs-list">
-                  <a href="/contactus">About Us</a>
-                </li>
-                <li className="R_navs-list">
-                  <a href="/login">Login In/Sign Up</a>
-                </li>
+                
               </ul>
             </Offcanvas.Body>
           </Offcanvas>

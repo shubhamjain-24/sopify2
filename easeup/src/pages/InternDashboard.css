@@ -45,3 +45,9 @@
         margin-bottom: 40px;
     }
 }
+@media screen and (max-width: 800px){
+    .internDashboard_Image{
+        width: 100%;
+        margin: 0;
+    }
+}

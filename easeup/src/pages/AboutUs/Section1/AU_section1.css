@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* position: relative; */
 }
 .AU_section1_textContainer-Text1{
     font-size: 46px;
