@@ -9,7 +9,7 @@ import InternNavigation from "./InternNavigation";
 import img from "../Images/isb.png";
 import img1 from "../Images/no.png";
 import { Link } from "react-router-dom";
-import './ParticularClient.css'
+import "./ParticularClient.css";
 // import { InternNavigation } from "./InternNavigation";
 // import { useToast } from "@chakra-ui/react";
 
@@ -41,7 +41,7 @@ const ParticularClient = () => {
 
   const [item, setItem] = useState(null);
   const [clientEmail, setClientEmail] = useState("Choose a Client");
-
+  const [confirm, setConfirm] = useState(false);
   const [show, setShow] = useState(false);
   const [showed, setShowed] = useState(false);
   const [shownotify, setshownotify] = useState(false);
@@ -53,7 +53,9 @@ const ParticularClient = () => {
 
   const handleClosedd = () => setshownotify(false);
   const handleShowedd = () => setshownotify(true);
-
+  const fun = () => {
+    setConfirm(true);
+  };
   const toast = useToast();
   const history = useNavigate();
   // const fetchItem = async () => {
@@ -410,46 +412,70 @@ const ParticularClient = () => {
       {/* <br /> */}
 
       {/* ye main background wala div h */}
-      <div className="PC_mainDiv" >
+      <div className="PC_mainDiv">
         {/* ye nams or id jo likhi h wo h */}
-        
-        
-       
-          <div className="PC_subdiv1"> 
-            
-            <p style={{margin:"5px", fontSize:"22px",marginBottom:"20px",marginTop:"20px"}}>
+
+        <div className="PC_subdiv1">
+          <p
+            style={{
+              margin: "5px",
+              fontSize: "22px",
+              marginBottom: "20px",
+              marginTop: "20px",
+            }}
+          >
             Welcome,
-            </p>
-            {internItem.name}
-            <br />
-            <br />
-            {internItem.email}
-            <br />
-            <br />
-            <Button style={{marginTop:"10px"}} variant="primary" onClick={handleShow}>
-              Send to Checker
-            </Button>
-            <br />
-            <br />
-            {internItem.approval == "chosen" ? (
-              <>
-                <Button style={{marginTop:"5px"}} variant="danger" onClick={handleShowedd}>
-                  Notify the User
-                </Button>
-              </>
-            ) : (
-              <>
-                {" "}
-                <Button style={{marginTop:"5px"}}  variant="danger" onClick={Notifyy} disabled>
-                  Notify the User
-                </Button>
-              </>
-            )}
-            
+          </p>
+          {internItem.name}
+          <br />
+          <br />
+          {internItem.email}
+          <br />
+          <br />
+          <Button
+            style={{ marginTop: "10px" }}
+            variant="primary"
+            onClick={handleShow}
+          >
+            Send to Checker
+          </Button>
+          <br />
+          <br />
+          {internItem.approval == "chosen" ? (
+            <>
+              <Button
+                style={{ marginTop: "5px" }}
+                variant="danger"
+                onClick={handleShowedd}
+              >
+                Notify the User
+              </Button>
+              <Button
+                style={{ marginTop: "5px" }}
+                variant="success"
+                // onClick={handleShowedd}
+                disabled
+              >
+                <Link to="/clientdetails">AllClients</Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              {" "}
+              <Button
+                style={{ marginTop: "5px" }}
+                variant="danger"
+                onClick={Notifyy}
+                disabled
+              >
+                Notify the User
+              </Button>
+            </>
+          )}
         </div>
         {/* </div> */}
         <div className="PC_subdiv2">
-        {/* <div
+          {/* <div
           style={{
             display: "flex",
             width: "86%",
@@ -689,6 +715,7 @@ const ParticularClient = () => {
               </>
             );
           })}
+
           <Offcanvas show={show} onHide={handleClose} placement="end">
             <Offcanvas.Header closeButton>
               <Offcanvas.Title>Sent to Checker</Offcanvas.Title>
@@ -759,12 +786,13 @@ const ParticularClient = () => {
                   </span>{" "}
                 </p>
                 <br />
+
                 <Button variant="outline-danger">
                   {" "}
                   <Input
                     type="file"
-                    name="file"
-                    placeholder="Upload resume"
+                    name="project"
+                    placeholder="Upload work"
                     onChange={handleProjectChange}
                     accept="application/pdf"
                   ></Input>
@@ -772,14 +800,33 @@ const ParticularClient = () => {
                 </Button>
               </div>
               {console.log(internItem.clientEmail)}
-              {/* <button></button> */}
-              <Button style={{ width: "21rem" }} onClick={Notifyy}>
-                Send to Client
+              <Button
+                variant="success"
+                style={{ width: "21rem" }}
+                onClick={(e) => fun(setClientEmail(internItem.clientEmail))}
+              >
+                Confirm
               </Button>
+              <br />
+              <br />
+              {confirm ? (
+                <>
+                  <Button style={{ width: "21rem" }} onClick={Notifyy}>
+                    Send to Client
+                  </Button>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <Button style={{ width: "21rem" }} onClick={Notifyy} disabled>
+                    Send to Client
+                  </Button>
+                </>
+              )}
             </Offcanvas.Body>
           </Offcanvas>
         </div>
-        </div>
+      </div>
       {/* </div> */}
     </>
   );

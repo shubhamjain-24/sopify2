@@ -13,7 +13,7 @@ import { useToast } from "@chakra-ui/react";
 // import Navigation from "../components/Navigation";
 
 import Navbar from "../components/Navbar/Navbar";
-import img1 from '../Images/internSignup2.png'
+import img1 from "../Images/internSignup2.png";
 
 // import {useSignupUserMutation} from '../services/appApi'
 
@@ -51,70 +51,6 @@ const Signup = () => {
   };
 
   const toast = useToast();
-
-  //     e.preventDefault();
-  //     signupUser({email,password}).then(({data})=>{
-  //       if(data){
-  //         console.log(data);
-  //         Navigate("/chat")
-  //       }
-  //     })}
-
-  //   const postDetails=(pics)=>{
-  //     setLoading(true);
-
-  //     if(pics===undefined){
-  //       <Alert showpopup={showpopup} variant="warning">
-
-  //       <p>
-  //        Please insert an Image
-  //       </p>
-  //       <hr />
-  //       <div className="d-flex justify-content-end">
-  //         <Button onClick={() => setShowpopup(false)} variant="outline-success">
-  //           Close me y'all!
-  //         </Button>
-  //       </div>
-  //     </Alert>
-
-  //     // {!show && <Button onClick={() => setShowpopup(false)}>Show Alert</Button>}
-  // return;
-  //     }
-  //     if(pics.type==='image/jpeg'|| pics.type==="image/png"){
-  //       const data=new FormData();
-  //       data.append("file",pics);
-  //       data.append("upload_preset","sopify_chat_app");
-  //       data.append("cloud_name","dunfbyufv");
-  //       fetch('https://api.cloudinary.com/v1_1/dunfbyufv/image/upload',{
-  //         method:"post",
-  //         body:data,
-  //     }).then((res)=>res.json())
-  //     .then(data=>{
-  //       setPic(data.url.toString());
-  //       console.log(data.url.toString());
-  //       setLoading(false);
-  //     })
-  //       .catch((err)=>{
-  //         console.log(err);
-  //         setLoading(false);
-  //       })
-  //     }
-  //     else{
-  //       <Alert showpopup={showpopup} variant="warning">
-
-  //       <p>
-  //        Please insert an Image
-  //       </p>
-  //       <hr />
-  //       <div className="d-flex justify-content-end">
-  //         <Button onClick={() => setShowpopup(false)} variant="outline-success">
-  //           Close
-  //         </Button>
-  //       </div>
-  //     </Alert>
-  //     }
-
-  //   };
 
   const history = useNavigate();
 
@@ -181,8 +117,8 @@ const Signup = () => {
       <Navbar />
       <Container>
         <Row>
-          <Col md={5} className="signup__bg" >
-          <img className="internsignupimage" src={img1} />
+          <Col md={5} className="signup__bg">
+            <img className="internsignupimage" src={img1} />
           </Col>
           <Col
             md={7}
