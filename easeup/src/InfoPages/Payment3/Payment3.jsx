@@ -7,7 +7,7 @@ const Payment3 = () => {
     <>
     <div className="payment3_mainDiv">
     <div className="payment3_subDiv1">
-    "We have commenced the task assigned to you. Please stay updated by regularly monitoring the chat and keeping track of any progress made.
+    "We have commenced the task assigned to us. Please stay updated by regularly monitoring the chat and keeping track of any progress made.
     </div>
     <div className="payment3_subDi2">
 <img className='payment3_img' src={img1} alt="" />
