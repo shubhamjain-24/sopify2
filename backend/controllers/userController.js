@@ -366,32 +366,13 @@ const registerListener = asyncHandler(async (req, res) => {
     !name ||
     !email ||
     !password ||
-    !phone ||
-    !course ||
-    !college ||
-    !age ||
     !tenth ||
-    !city ||
     !twelth ||
     !bachelor ||
     !specialization ||
     !college ||
     !course ||
     !country ||
-    !work ||
-    !internship ||
-    !social ||
-    !extra ||
-    !fund ||
-    !careergoal ||
-    !familybg ||
-    !other ||
-    !anythingelse ||
-    !consultancy ||
-    !coupon ||
-    !hear ||
-    !resume ||
-    !file ||
     !selectedValues
   ) {
     res.status(400);
@@ -832,7 +813,8 @@ const sendProjecttoClient = asyncHandler(async (req, res) => {
       { email },
       {
         $set: {
-          projectPath: project,
+          project: projectPath,
+          projectPath: projectPath,
           approval: "null",
           clientSideDisplay: "send",
         },
@@ -1178,6 +1160,20 @@ const TotalRevenuePERYear = async (req, res) => {
   }
 };
 
+const DeleteUser = asyncHandler(async (req, res) => {
+  const email = req.params.email;
+  try {
+    const result = await User.deleteOne({ email: email }); // Delete the record with the specified email using the user model
+    if (result.deletedCount === 1) {
+      res.send(`User with email ${email} has been deleted`);
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch (error) {
+    res.status(500).send("Error deleting user");
+  }
+});
+
 module.exports = {
   registerUser,
   authUser,
@@ -1224,4 +1220,5 @@ module.exports = {
   TotalRevenueperMonthparams,
   sendProjecttoClient,
   downloadProject,
+  DeleteUser,
 };

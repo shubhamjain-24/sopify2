@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
-import img1 from '../Images/internlogin2.jpg'
+import img1 from "../Images/internlogin2.jpg";
 
 import "../styles/login.css";
 
@@ -63,7 +63,7 @@ const Login = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history("/clientdetails");
+      history("/internDashboard");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -82,15 +82,18 @@ const Login = () => {
       <Navbar />
       <Container>
         <Row>
-          <Col md={5} className="intern_login__bg" >
-          <img className="internLoginimage" src={img1} />
+          <Col md={5} className="intern_login__bg">
+            <img className="internLoginimage" src={img1} />
           </Col>
           <Col
             md={7}
             className="d-flex align-items-center justify-content-center flex-direction-column "
           >
             {/* </Col> */}
-            <Form className="internLoginForm" style={{ width: "80%", maxWidth: 500 }}>
+            <Form
+              className="internLoginForm"
+              style={{ width: "80%", maxWidth: 500 }}
+            >
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -114,10 +117,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                 />{" "}
-                <button
-                  className="showButton"
-                  onClick={handleClick}
-                >
+                <button className="showButton" onClick={handleClick}>
                   {show ? "Hide" : "Show"}
                 </button>
               </Form.Group>

@@ -7,10 +7,13 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import InternNavigation from "./InternNavigation";
 // import { ChatState } from "../../context/ChatProvider";
-import img1 from '../Images/internDashmain.png'
-import './InternDashboard.css'
+import img1 from "../Images/internDashmain.png";
+import "./InternDashboard.css";
+import { Link } from "react-router-dom";
 
 const InternDashoard = () => {
+  const userInfoString = localStorage.getItem("userInfo");
+  const userInfo = JSON.parse(userInfoString);
   return (
     <>
       {" "}
@@ -43,18 +46,24 @@ const InternDashoard = () => {
         </Container>
       </Navbar> */}
       <div className="internDashboard_mainContainer">
-      <div className="internDashboard_subContainer1">
-      <div className="internDashboard_subContainer1_inner">
-        <h1 className="ID_head">Welcome,</h1>
-        <h3 className="ID_head2">Intern Name</h3>
-        <p className="Id_head3">Welcome to the team! We're excited to have you here as an intern. We hope this experience will be valuable and rewarding for you, and we look forward to working together.</p>
-      </div>
-      </div>
-      <div className="internDashboard_subContainer2">
-        <img className="internDashboard_Image" src={img1}/>
-        
-      </div>
-
+        <div className="internDashboard_subContainer1">
+          <div className="internDashboard_subContainer1_inner">
+            <h1 className="ID_head">Welcome,</h1>
+            <h3 className="ID_head2">{userInfo.name}</h3>
+            <p className="Id_head3">
+              Welcome to the team! We're excited to have you here as an intern.
+              We hope this experience will be valuable and rewarding for you,
+              and we look forward to working together.
+            </p>
+            <button>
+              {" "}
+              <Link to="/particularClient">Get started</Link>
+            </button>
+          </div>
+        </div>
+        <div className="internDashboard_subContainer2">
+          <img className="internDashboard_Image" src={img1} />
+        </div>
       </div>
     </>
   );

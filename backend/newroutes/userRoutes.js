@@ -56,7 +56,10 @@ const {
 
   TotalRevenueperMonthparams,
   sendProjecttoClient,
+
   downloadProject,
+
+  DeleteUser,
 } = require("../controllers/userController");
 // ../Controllers/UserController"
 // const pdf = require("./pdfModel");
@@ -88,7 +91,9 @@ router.post(
   registerListener
 );
 router.get("/download/resume/:email", downloadResume);
+
 router.get("/download/project/:email", downloadProject);
+
 router.get("/download/file/:email", downloadFile);
 router.post("/listener/login", authListener);
 router.route("/").get(protect, allUsers);
@@ -127,6 +132,7 @@ router.put(
 router.put(
   "/sentprojecttoclient/:email",
   upload.fields([{ name: "file" }, { name: "project" }]),
+
   sendProjecttoClient
 );
 
@@ -152,5 +158,6 @@ router.get(
 );
 router.get("/TotalRevenueCurrentYear/:email", TotalRevenueCurrentYear);
 router.get("/TotalRevenuePERYear/:email", TotalRevenuePERYear);
+router.delete("/deletetheuser/:email", DeleteUser);
 
 module.exports = router;
